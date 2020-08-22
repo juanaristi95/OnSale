@@ -14,19 +14,34 @@ namespace OnSale.Web.Data
 
         // Properties
 
+        public DbSet<City> Cities { get; set; }
         // Generic property
         public DbSet<Country> Countries { get; set; }
+
+        public DbSet<Department> Departments { get; set; }
 
         // method to prevent repeted countries
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            // has an Index by field Name and that field is unique
+            modelBuilder.Entity<City>()
+               .HasIndex(t => t.Name)
+                .IsUnique();
+             
+
+            // has an Index by field Name and that field is unique 
             modelBuilder.Entity<Country>()
                 .HasIndex(t => t.Name)
                 .IsUnique();
+
+            modelBuilder.Entity<Department>()
+                .HasIndex(t => t.Name)
+                .IsUnique();
+
         }
 
     }
+
 }
+
