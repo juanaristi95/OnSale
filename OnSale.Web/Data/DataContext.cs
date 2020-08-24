@@ -1,10 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using OnSale.Common.Entities;
+using OnSale.Web.Data.Entities;
 
 namespace OnSale.Web.Data
 {
     // herence 
-    public class DataContext : DbContext
+    public class DataContext : IdentityDbContext<User>
     {
         // Constructor
         public DataContext(DbContextOptions<DataContext> options) : base(options)
