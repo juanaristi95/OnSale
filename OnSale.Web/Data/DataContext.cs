@@ -17,11 +17,16 @@ namespace OnSale.Web.Data
         // Properties
 
         public DbSet<Category> Categories { get; set; }
+
         public DbSet<City> Cities { get; set; }
         // Generic property
         public DbSet<Country> Countries { get; set; }
 
         public DbSet<Department> Departments { get; set; }
+        public DbSet<Order> Orders { get; set; }
+
+        public DbSet<OrderDetail> OrderDetails { get; set; }
+
         public DbSet<Product> Products { get; set; }
 
         public DbSet<ProductImage> ProductImages { get; set; }
@@ -40,7 +45,7 @@ namespace OnSale.Web.Data
             modelBuilder.Entity<City>()
                 .HasIndex(t => t.Name)
                 .IsUnique();
-             
+
 
             // has an Index by field Name and that field is unique 
             modelBuilder.Entity<Country>()
