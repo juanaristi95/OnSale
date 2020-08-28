@@ -83,6 +83,14 @@ namespace OnSale.Web
                 app.UseHsts();
             }
 
+            //app.UseRequestLocalization(new RequestLocalizationOptions
+            //{
+            //    DefaultRequestCulture = new RequestCulture("en-US"),
+            //    SupportedCultures = new[] { new CultureInfo("en-US") },
+            //    SupportedUICultures = new[] { new CultureInfo("en-US") }
+            //});
+
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseAuthentication();
