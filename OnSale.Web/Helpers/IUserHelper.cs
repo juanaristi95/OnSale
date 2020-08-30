@@ -31,6 +31,9 @@ namespace OnSale.Web.Helpers
 
         Task<User> GetUserAsync(Guid userId);
 
+        Task<string> GenerateEmailConfirmationTokenAsync(User user);
+
+        Task<IdentityResult> ConfirmEmailAsync(User user, string token);
 
     }
 
