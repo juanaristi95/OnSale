@@ -1,4 +1,5 @@
 ﻿using OnSale.Common.Entities;
+using OnSale.Prism.Helpers;
 using Prism.Navigation;
 using System.Collections.ObjectModel;
 
@@ -10,7 +11,7 @@ namespace OnSale.Prism.ViewModels
         private ObservableCollection<ProductImage> _images;
         public ProductDetailPageViewModel(INavigationService navigationService) : base(navigationService)
         {
-            Title = "Product";
+            Title = Languages.Product;
         }
 
         public ObservableCollection<ProductImage> Images
