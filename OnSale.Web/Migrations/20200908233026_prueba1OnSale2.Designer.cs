@@ -10,14 +10,14 @@ using OnSale.Web.Data;
 namespace OnSale.Web.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200824033304_Users")]
-    partial class Users
+    [Migration("20200908233026_prueba1OnSale2")]
+    partial class prueba1OnSale2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.11-servicing-32099")
+                .HasAnnotation("ProductVersion", "2.1.14-servicing-32113")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -167,8 +167,9 @@ namespace OnSale.Web.Migrations
 
                     b.HasIndex("DepartmentId");
 
-                    b.HasIndex("Name")
-                        .IsUnique();
+                    b.HasIndex("Name", "DepartmentId")
+                        .IsUnique()
+                        .HasFilter("[DepartmentId] IS NOT NULL");
 
                     b.ToTable("Cities");
                 });
@@ -207,10 +208,36 @@ namespace OnSale.Web.Migrations
 
                     b.HasIndex("CountryId");
 
-                    b.HasIndex("Name")
-                        .IsUnique();
+                    b.HasIndex("Name", "CountryId")
+                        .IsUnique()
+                        .HasFilter("[CountryId] IS NOT NULL");
 
                     b.ToTable("Departments");
+                });
+
+            modelBuilder.Entity("OnSale.Common.Entities.OrderDetail", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("OrderId");
+
+                    b.Property<decimal>("Price");
+
+                    b.Property<int?>("ProductId");
+
+                    b.Property<float>("Quantity");
+
+                    b.Property<string>("Remarks");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("OrderDetails");
                 });
 
             modelBuilder.Entity("OnSale.Common.Entities.Product", b =>
@@ -258,6 +285,31 @@ namespace OnSale.Web.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("ProductImages");
+                });
+
+            modelBuilder.Entity("OnSale.Web.Data.Entities.Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("Date");
+
+                    b.Property<DateTime?>("DateConfirmed");
+
+                    b.Property<DateTime?>("DateSent");
+
+                    b.Property<int>("OrderStatus");
+
+                    b.Property<string>("Remarks");
+
+                    b.Property<string>("UserId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("OnSale.Web.Data.Entities.User", b =>
@@ -381,16 +433,29 @@ namespace OnSale.Web.Migrations
 
             modelBuilder.Entity("OnSale.Common.Entities.City", b =>
                 {
-                    b.HasOne("OnSale.Common.Entities.Department")
+                    b.HasOne("OnSale.Common.Entities.Department", "Department")
                         .WithMany("Cities")
-                        .HasForeignKey("DepartmentId");
+                        .HasForeignKey("DepartmentId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("OnSale.Common.Entities.Department", b =>
                 {
-                    b.HasOne("OnSale.Common.Entities.Country")
+                    b.HasOne("OnSale.Common.Entities.Country", "Country")
                         .WithMany("Departments")
-                        .HasForeignKey("CountryId");
+                        .HasForeignKey("CountryId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("OnSale.Common.Entities.OrderDetail", b =>
+                {
+                    b.HasOne("OnSale.Web.Data.Entities.Order")
+                        .WithMany("OrderDetails")
+                        .HasForeignKey("OrderId");
+
+                    b.HasOne("OnSale.Common.Entities.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId");
                 });
 
             modelBuilder.Entity("OnSale.Common.Entities.Product", b =>
@@ -405,6 +470,13 @@ namespace OnSale.Web.Migrations
                     b.HasOne("OnSale.Common.Entities.Product")
                         .WithMany("ProductImages")
                         .HasForeignKey("ProductId");
+                });
+
+            modelBuilder.Entity("OnSale.Web.Data.Entities.Order", b =>
+                {
+                    b.HasOne("OnSale.Web.Data.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
                 });
 
             modelBuilder.Entity("OnSale.Web.Data.Entities.User", b =>
