@@ -31,6 +31,8 @@ namespace OnSale.Web.Data
 
         public DbSet<ProductImage> ProductImages { get; set; }
 
+        public DbSet<Qualification> Qualifications { get; set; }
+
 
         // method to prevent repeted countries
         protected override void OnModelCreating(ModelBuilder modelBuilder)

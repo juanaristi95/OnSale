@@ -19,7 +19,7 @@ namespace OnSale.Prism.ViewModels
         private ObservableCollection<ProductItemViewModel> _products;
         private bool _isRunning;
         private string _search;
-        private List<Product> _myProducts;
+        private List<ProductResponse> _myProducts;
         private DelegateCommand _searchCommand;
         
 
@@ -66,7 +66,7 @@ namespace OnSale.Prism.ViewModels
             }
             IsRunning = true;
             string url = App.Current.Resources["UrlAPI"].ToString();
-            Response response = await _apiService.GetListAsync<Product>(
+            Response response = await _apiService.GetListAsync<ProductResponse>(
                 url,
                 "/api",
                 "/Products");
@@ -78,7 +78,7 @@ namespace OnSale.Prism.ViewModels
                 return;
             }
 
-            _myProducts = (List<Product>)response.Result;
+            _myProducts = (List<ProductResponse>)response.Result;
             ShowProducts();
         }
 
