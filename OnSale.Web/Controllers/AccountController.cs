@@ -264,13 +264,13 @@ namespace OnSale.Web.Controllers
             return View(model);
         }
 
-        public IActionResult ChangePassword()
+        public IActionResult ChangePasswordMVC()
         {
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model)
+        public async Task<IActionResult> ChangePasswordMVC(ChangePasswordViewModel model)
         {
             if (ModelState.IsValid)
             {
