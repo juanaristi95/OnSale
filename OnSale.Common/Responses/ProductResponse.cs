@@ -25,7 +25,7 @@ namespace OnSale.Common.Responses
         public int ProductImagesNumber => ProductImages == null ? 0 : ProductImages.Count;
 
         public string ImageFullPath => ProductImages == null || ProductImages.Count == 0
-            ? $"https://onsaleprepweb.azurewebsites.net/images/noimage.png"
+            ? $"https://onsaleweb20202jdaa3.azurewebsites.net/images/noimage.png"
             : ProductImages.FirstOrDefault().ImageFullPath;
 
         public ICollection<QualificationResponse> Qualifications { get; set; }

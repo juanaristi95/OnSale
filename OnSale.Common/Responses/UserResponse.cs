@@ -23,7 +23,7 @@ namespace OnSale.Common.Responses
         public Guid ImageId { get; set; }
 
         public string ImageFullPath => ImageId == Guid.Empty
-            ? $"https://onsalezulu.azurewebsites.net/images/noimage.png"
+            ? $"https://onsaleweb20202jdaa3.azurewebsites.net/images/noimage.png"
             : $"https://onsale.blob.core.windows.net/users/{ImageId}";
 
         public UserType UserType { get; set; }
