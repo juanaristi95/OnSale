@@ -30,6 +30,8 @@ namespace OnSale.Common.Requests
         public int CityId { get; set; }
 
         public byte[] ImageArray { get; set; }
+
+        public string PasswordConfirm { get; set; }        
     }
 
 }
