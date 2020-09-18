@@ -45,6 +45,7 @@ namespace OnSale.Prism
             containerRegistry.RegisterForNavigation<QualificationsPage, QualificationsPageViewModel>();
             containerRegistry.RegisterForNavigation<QualificationDetailPage, QualificationDetailPageViewModel>();
             containerRegistry.RegisterForNavigation<ProductTabbedPage, ProductTabbedPageViewModel>();
+            containerRegistry.RegisterForNavigation<AddQualificationPage, AddQualificationPageViewModel>();
         }
     }
 }

@@ -241,6 +241,15 @@ namespace OnSale.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to New Qualification.
+        /// </summary>
+        public static string NewQualification {
+            get {
+                return ResourceManager.GetString("NewQualification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password.
         /// </summary>
         public static string Password {
@@ -304,6 +313,15 @@ namespace OnSale.Prism.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You must select a qualification..
+        /// </summary>
+        public static string QualificationError {
+            get {
+                return ResourceManager.GetString("QualificationError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Number of qualifications.
         /// </summary>
         public static string QualificationNumber {
@@ -336,6 +354,24 @@ namespace OnSale.Prism.Resources {
         public static string Remarks {
             get {
                 return ResourceManager.GetString("Remarks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter your remarks....
+        /// </summary>
+        public static string RemarksPlaceHolder {
+            get {
+                return ResourceManager.GetString("RemarksPlaceHolder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save.
+        /// </summary>
+        public static string Save {
+            get {
+                return ResourceManager.GetString("Save", resourceCulture);
             }
         }
         
