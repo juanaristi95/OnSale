@@ -6,21 +6,41 @@
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.UseSafeArea="true"
              xmlns:syncfusion="clr-namespace:Syncfusion.SfRotator.XForms;assembly=Syncfusion.SfRotator.XForms"
-             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
-             xmlns:i18n="clr-namespace:OnSale.Prism.Helpers"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"  
+           	 xmlns:i18n="clr-namespace:OnSale.Prism.Helpers"
+             xmlns:rating="clr-namespace:Syncfusion.SfRating.XForms;assembly=Syncfusion.SfRating.XForms"
              x:Class="OnSale.Prism.Views.ProductDetailPage"
              BackgroundColor="{StaticResource ColorBackground}"
+             IconImageSource="ic_action_card_giftcard"
              Title="{Binding Title}">
+
     <StackLayout Padding="5">
         <ScrollView>
             <StackLayout>
+                <StackLayout HorizontalOptions="Center"
+                             Orientation="Horizontal">
+                    <Label Text="{i18n:Translate Qualification}"
+                            VerticalOptions="Center"/>
+                    <Label FontAttributes="Bold"
+                            FontSize="Large"
+                            Text="{Binding Product.Qualification, StringFormat='{0:N2}'}"/>
+                    <Label Text="{i18n:Translate QualificationNumber}"
+                            VerticalOptions="Center"/>
+                    <Label FontAttributes="Bold"
+                            FontSize="Large"
+                            Text="{Binding Product.ProductQualifications, StringFormat='{0:N0}'}"/>
+                </StackLayout>
+                <rating:SfRating IsEnabled="False"
+                                 HorizontalOptions="Center"
+                                 Precision="Exact"
+                                 Value="{Binding Product.Qualification}"/>
                 <syncfusion:SfRotator EnableAutoPlay="True"  
                                       EnableLooping="True"
                                       HeightRequest="300"
                                       ItemsSource="{Binding Images}"
                                       NavigationDelay="5000"
                                       NavigationDirection="Horizontal"
-                                      NavigationStripMode="Thumbnail"
+                                      NavigationStripMode="Dots"
                                       NavigationStripPosition="Bottom">
                     <syncfusion:SfRotator.ItemTemplate>
                         <DataTemplate>
@@ -96,6 +116,5 @@
                 TextColor="White"
                 VerticalOptions="EndAndExpand"/>
     </StackLayout>
-
 
 </ContentPage>

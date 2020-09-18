@@ -6,19 +6,24 @@
              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.UseSafeArea="true"
-             xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
-             xmlns:i18n="clr-namespace:OnSale.Prism.Helpers"
+         	 xmlns:busyindicator="clr-namespace:Syncfusion.SfBusyIndicator.XForms;assembly=Syncfusion.SfBusyIndicator.XForms"
+           	 xmlns:i18n="clr-namespace:OnSale.Prism.Helpers"
+             xmlns:rating="clr-namespace:Syncfusion.SfRating.XForms;assembly=Syncfusion.SfRating.XForms"
              x:Class="OnSale.Prism.Views.ProductsPage"
              BackgroundColor="{StaticResource ColorBackground}"
              Title="{Binding Title}">
+
     <AbsoluteLayout>
         <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
                      AbsoluteLayout.LayoutFlags="All" 
                      Padding="5">
             <SearchBar Placeholder="{i18n:Translate SearchProduct}"
-                SearchCommand="{Binding SearchCommand}"
-                Text="{Binding Search}"/>
+                       SearchCommand="{Binding SearchCommand}"
+                       Text="{Binding Search}"/>
             <CollectionView ItemsSource="{Binding Products}">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical"/>
+                </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid>
@@ -48,6 +53,10 @@
                                        LineBreakMode="TailTruncation"
                                        FontAttributes="Italic" 
                                        VerticalOptions="End" />
+                                <rating:SfRating ItemSize="20"
+                                                 IsEnabled="False"
+                                                 Precision="Exact"
+                                                 Value="{Binding Qualification}"/>
                             </StackLayout>
                             <Image Grid.Column="2" 
                                    Source="ic_more_vert"/>
@@ -68,4 +77,6 @@
                 	                   ViewBoxWidth="80"
                 	                   ViewBoxHeight="80" />
     </AbsoluteLayout>
+
 </ContentPage>
+
