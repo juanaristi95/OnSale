@@ -69,6 +69,7 @@ namespace OnSale.Prism.Helpers
 
         public static string Logout => Resource.Logout;
 
+        public static string LoginFirstMessage => Resource.LoginFirstMessage;
     }
 
 }
