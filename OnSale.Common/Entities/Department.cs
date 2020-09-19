@@ -12,6 +12,7 @@ namespace OnSale.Common.Entities
 
         [MaxLength(50, ErrorMessage = "The field {0} must contain less than {1} characters")]
         [Required]
+        [Display(Name = "Department")]
         public string Name { get; set; }
 
         public ICollection<City> Cities { get; set; } 

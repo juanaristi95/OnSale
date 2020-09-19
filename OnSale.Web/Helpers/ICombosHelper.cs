@@ -12,6 +12,9 @@ namespace OnSale.Web.Helpers
 
         IEnumerable<SelectListItem> GetComboCities(int departmentId);
 
+        IEnumerable<SelectListItem> GetOrderStatuses();
+
+
     }
 
 }

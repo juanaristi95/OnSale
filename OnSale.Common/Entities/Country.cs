@@ -13,7 +13,8 @@ namespace OnSale.Common.Entities
 
         // Country name field (required) 
         [MaxLength(50, ErrorMessage = "The field {0} must contain less than {1} characters" )]
-        [Required] 
+        [Required]
+        [Display(Name = "Country")]
         public string Name { get; set; }
 
         public ICollection<Department> Departments { get; set; }
