@@ -19,6 +19,13 @@ namespace OnSale.Prism.ItemViewModels
 
         public DelegateCommand SelectProductCommand => _selectProductCommand ?? (_selectProductCommand = new DelegateCommand(SelectProductAsync));
 
+        public float Quantity { get; set; }
+
+        public string Remarks { get; set; }
+
+        public decimal Value => (decimal)Quantity * Price;
+
+
         private async void SelectProductAsync()
         {
             NavigationParameters parameters = new NavigationParameters

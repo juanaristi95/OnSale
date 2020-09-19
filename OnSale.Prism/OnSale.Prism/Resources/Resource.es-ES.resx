@@ -399,4 +399,43 @@
   <data name="ChangePassworrdMessage" xml:space="preserve">
     <value>La contraseña se cambió con éxito.</value>
   </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Cantidad</value>
+  </data>
+  <data name="QuantityError" xml:space="preserve">
+    <value>Debes ingresar una cantidad.</value>
+  </data>
+  <data name="QuantityPlaceHolder" xml:space="preserve">
+    <value>Ingresa la cantidad del producto...</value>
+  </data>
+  <data name="AddToCartMessage" xml:space="preserve">
+    <value>El producto fue agregado al carro de compras con éxito.</value>
+  </data>
+  <data name="ProductExistInOrder" xml:space="preserve">
+    <value>El producto ya existe en la orden. Puede modificar el pedido en 'Ver carro de compras'.</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Valor</value>
+  </data>
+  <data name="FinishOrder" xml:space="preserve">
+    <value>Finalizar Pedido</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Sí</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="ClearAllConfirm" xml:space="preserve">
+    <value>¿Está seguro de eliminar todos los productos del pedido?</value>
+  </data>
+  <data name="Items" xml:space="preserve">
+    <value>Artículos</value>
+  </data>
+  <data name="Total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
 </root>
