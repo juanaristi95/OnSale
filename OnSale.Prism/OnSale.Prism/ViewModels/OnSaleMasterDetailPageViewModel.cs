@@ -16,14 +16,20 @@ namespace OnSale.Prism.ViewModels
     {
         private readonly INavigationService _navigationService;
         private UserResponse _user;
-
+        private static OnSaleMasterDetailPageViewModel _instance;
         public OnSaleMasterDetailPageViewModel(INavigationService navigationService) : base(navigationService)
         {
+            _instance = this;
             _navigationService = navigationService;
             LoadMenus();
             LoadUser();
         }
         public ObservableCollection<MenuItemViewModel> Menus { get; set; }
+
+        public static OnSaleMasterDetailPageViewModel GetInstance()
+        {
+            return _instance;
+        }
 
         public UserResponse User
         {
@@ -31,7 +37,7 @@ namespace OnSale.Prism.ViewModels
             set => SetProperty(ref _user, value);
         }
 
-        private void LoadUser()
+        public void LoadUser()
         {
             if (Settings.IsLogin)
             {
