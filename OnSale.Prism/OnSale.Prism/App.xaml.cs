@@ -37,6 +37,7 @@ namespace OnSale.Prism
             containerRegistry.Register<IApiService, ApiService>();
             containerRegistry.Register<IRegexHelper, RegexHelper>();
             containerRegistry.Register<IFilesHelper, FilesHelper>();
+            containerRegistry.Register<ICombosHelper, CombosHelper>();
 
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<ProductsPage, ProductsPageViewModel>();
@@ -55,6 +56,7 @@ namespace OnSale.Prism
             containerRegistry.RegisterForNavigation<ChangePasswordPage, ChangePasswordPageViewModel>();
             containerRegistry.RegisterForNavigation<AddToCartPage, AddToCartPageViewModel>();
             containerRegistry.RegisterForNavigation<ModifiyOrderPage, ModifiyOrderPageViewModel>();
+            containerRegistry.RegisterForNavigation<FinishOrderPage, FinishOrderPageViewModel>();
         }
     }
 }

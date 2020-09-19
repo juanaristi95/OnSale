@@ -105,8 +105,9 @@ namespace OnSale.Prism.ViewModels
             }).ToList());
         }
 
-        private void FinishOrderAsync()
+        private async void FinishOrderAsync()
         {
+            await _navigationService.NavigateAsync(nameof(FinishOrderPage));
         }
 
         private async void ClearAllAsync()

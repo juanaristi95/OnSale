@@ -229,6 +229,23 @@ namespace OnSale.Prism.Helpers
 
         public static string ModifyOrder => Resource.ModifyOrder;
 
+        public static string FinishOrderMessage => Resource.FinishOrderMessage;
+
+        public static string PaymentMethod => Resource.PaymentMethod;
+
+        public static string PaymentMethodError => Resource.PaymentMethodError;
+
+        public static string PaymentMethodPlaceHolder => Resource.PaymentMethodPlaceHolder;
+
+        public static string Cash => Resource.Cash;
+
+        public static string CreditCard => Resource.CreditCard;
+
+        public static string DeliveryAddress => Resource.DeliveryAddress;
+
+        public static string DeliveryAddressError => Resource.DeliveryAddressError;
+
+        public static string DeliveryAddressPlaceHolder => Resource.DeliveryAddressPlaceHolder;
 
 
 
