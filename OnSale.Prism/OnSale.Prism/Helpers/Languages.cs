@@ -225,6 +225,11 @@ namespace OnSale.Prism.Helpers
 
         public static string Delete => Resource.Delete;
 
+        public static string DeleteProductInOrderConfirm => Resource.DeleteProductInOrderConfirm;
+
+        public static string ModifyOrder => Resource.ModifyOrder;
+
+
 
 
     }

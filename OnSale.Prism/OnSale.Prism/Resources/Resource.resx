@@ -441,4 +441,13 @@
   <data name="Delete" xml:space="preserve">
     <value>Delete</value>
   </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="DeleteProductInOrderConfirm" xml:space="preserve">
+    <value>Are you sure to delete the product in the order?</value>
+  </data>
+  <data name="ModifyOrder" xml:space="preserve">
+    <value>Modify Order</value>
+  </data>
 </root>

@@ -438,4 +438,13 @@
   <data name="Delete" xml:space="preserve">
     <value>Excluir</value>
   </data>
+ <data name="Delete" xml:space="preserve">
+    <value>Excluir</value>
+  </data>
+  <data name="DeleteProductInOrderConfirm" xml:space="preserve">
+    <value>Tem certeza de que deseja excluir o produto do pedido?</value>
+  </data>
+  <data name="ModifyOrder" xml:space="preserve">
+    <value>Ordem Modificada</value>
+  </data>
 </root>
