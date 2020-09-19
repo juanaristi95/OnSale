@@ -8,11 +8,11 @@ namespace OnSale.Web.Data.Entities
     {
         public int Id { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd hh:mm tt}")]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd hh:mm}")]
         public DateTime Date { get; set; }
 
         [Display(Name = "Date")]
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd hh:mm tt}")]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd hh:mm}")]
         public DateTime DateLocal => Date.ToLocalTime();
 
         [JsonIgnore]

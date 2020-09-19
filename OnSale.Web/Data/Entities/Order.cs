@@ -12,7 +12,7 @@ namespace OnSale.Web.Data.Entities
 
         public DateTime Date { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd hh:mm tt}")]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd hh:mm}")]
         [Display(Name = "Date")]
         public DateTime DateLocal => Date.ToLocalTime();
 
@@ -21,19 +21,19 @@ namespace OnSale.Web.Data.Entities
         [Display(Name = "Order Status")]
         public OrderStatus OrderStatus { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd hh:mm tt}")]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd hh:mm}")]
         [Display(Name = "Date Sent")]
         public DateTime? DateSent { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd hh:mm tt}")]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd hh:mm}")]
         [Display(Name = "Date Sent")]
         public DateTime? DateSentLocal => DateSent?.ToLocalTime();
 
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd hh:mm tt}")]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd hh:mm}")]
         [Display(Name = "Date Confirmed")]
         public DateTime? DateConfirmed { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd hh:mm tt}")]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd hh:mm}")]
         [Display(Name = "Date Confirmed")]
         public DateTime? DateConfirmedLocal => DateSent?.ToLocalTime();
 
