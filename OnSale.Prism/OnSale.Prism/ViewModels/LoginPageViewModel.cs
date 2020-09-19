@@ -17,6 +17,7 @@ namespace OnSale.Prism.ViewModels
         private readonly IApiService _apiService;
         private bool _isRunning;
         private bool _isEnabled;
+        private string _Email;
         private string _password;
         private string _pageReturn;
         private DelegateCommand _loginCommand;
@@ -50,7 +51,11 @@ namespace OnSale.Prism.ViewModels
             set => SetProperty(ref _isEnabled, value);
         }
 
-        public string Email { get; set; }
+        public string Email 
+        { 
+            get => _Email; 
+            set => SetProperty(ref _Email, value); 
+        }
 
         public string Password
         {
@@ -66,8 +71,7 @@ namespace OnSale.Prism.ViewModels
                 _pageReturn = parameters.GetValue<string>("pageReturn");
             }
         }
-
-
+ 
         private async void LoginAsync()
         {
             if (string.IsNullOrEmpty(Email))
@@ -134,9 +138,13 @@ namespace OnSale.Prism.ViewModels
             }
         }
 
-        private void ForgotPasswordAsync()
+        private async void ForgotPasswordAsync()
         {
-            //TODO: Pending
+            NavigationParameters parameters = new NavigationParameters
+            {
+                {"email", Email }
+            };
+            await _navigationService.NavigateAsync(nameof(RecoverPasswordPage), parameters);
         }
 
         private async void RegisterAsync()

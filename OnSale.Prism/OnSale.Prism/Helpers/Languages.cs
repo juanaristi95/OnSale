@@ -167,6 +167,11 @@ namespace OnSale.Prism.Helpers
 
         public static string NoGallerySupported => Resource.NoGallerySupported;
 
+        public static string RecoverPassword => Resource.RecoverPassword;
+
+        public static string RecoverPasswordMessage => Resource.RecoverPasswordMessage;
+
+
     }
 
 }
